@@ -5,3 +5,10 @@ F:\c#\tictactoe\tictactoe\obj\Debug\tictactoe.csprojAssemblyReference.cache
 F:\c#\tictactoe\tictactoe\obj\Debug\tictactoe.csproj.CoreCompileInputs.cache
 F:\c#\tictactoe\tictactoe\obj\Debug\tictactoe.exe
 F:\c#\tictactoe\tictactoe\obj\Debug\tictactoe.pdb
+F:\c#\tictactoe\git\tictactoe\bin\Debug\tictactoe.exe.config
+F:\c#\tictactoe\git\tictactoe\bin\Debug\tictactoe.exe
+F:\c#\tictactoe\git\tictactoe\bin\Debug\tictactoe.pdb
+F:\c#\tictactoe\git\tictactoe\obj\Debug\tictactoe.csprojAssemblyReference.cache
+F:\c#\tictactoe\git\tictactoe\obj\Debug\tictactoe.csproj.CoreCompileInputs.cache
+F:\c#\tictactoe\git\tictactoe\obj\Debug\tictactoe.exe
+F:\c#\tictactoe\git\tictactoe\obj\Debug\tictactoe.pdb

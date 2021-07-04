@@ -10,6 +10,7 @@ namespace tictactoe {
         public static int column;
         public static int counter;
         public static int[,] matix = null;
+        public static bool winner = false;
         public static void matrixbasicsetting() {
             //upload
             row = 3;
@@ -30,25 +31,50 @@ namespace tictactoe {
             }
         public static void game() {
             Console.WriteLine("X is the starter");
-            /*do {
+            do {
 
-                } while();*/
+                } while(winner == false);
             }
-        static void testwinner(int[,] matrix) {
-            int row = 3;
-            int column= 3;
-            //row testing user X
-            for(int i = 0;i < row;i++) {
-                if(matix[row,column] == matix[row,column + 1]&& matix[row,column] == matix[row,column + 2]&& matix[row,column+1] == matix[row,column + 2]&&matix[row,column] == 'X') {
-                    Console.Clear();
-                    Console.WriteLine("X is the winner");
-                    }
+        static void testwinner() {
+            int row;
+            int column;
+            //row testing
+            row = 3;
+            column = 0;
+            for(int i = 0;i < row;i++) {               
+                    if(matix[i,column] == matix[i,column + 1] && matix[i,column] == matix[i,column + 2] && matix[i,column + 1] == matix[i,column + 2]) {
+                        Console.Clear();
+                        Console.WriteLine($"{matix[i,column]} is the winner");
+                        winner = true;
+                        break;
+                        }
+                    
                 }
-            //column testing user Y
+            //column testing
+            row = 0;
+            column = 3;
             for(int i = 0;i < column;i++) {
-                if(matix[row,column] == matix[row + 1,column]&& matix[row+2,column] == matix[row,column]&& matix[row+1,column]==matix[row+2,column]) {
+                if(matix[row,i] == matix[row + 1,i]&& matix[row+2,i] == matix[row,i]&& matix[row+1,i]==matix[row+2,i] ) {
+                    Console.Clear();
+                    Console.WriteLine($"{matix[row,column]} is the winner");
+                    winner = true;
+                    break;
                     }
                 }
+            //other tests
+            //diagnal n0.1
+            if(matix[0,0] == matix[1,1] && matix[1,1] == matix[2,2]&& matix[2,2] == matix[0,0]) {
+                Console.Clear();
+                Console.WriteLine($"{matix[0,0]} is the winner");
+                winner = true;
+                }
+            //diagnal n0.2
+            if(matix[0,2] == matix[1,1] && matix[1,1] == matix[2,0] && matix[2,0] == matix[0,2]) {
+                Console.Clear();
+                Console.WriteLine($"{matix[0,2]} is the winner");
+                winner = true;
+                }
+
             }
         static void Main(string[] args) {
             matrixbasicsetting();
