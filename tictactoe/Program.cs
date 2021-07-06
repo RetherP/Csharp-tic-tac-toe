@@ -9,16 +9,16 @@ namespace tictactoe {
         public static int row;
         public static int column;
         public static int counter;
-        public static int[,] matix = null;
+        public static string[,] matix = null;
         public static bool winner = false;
         public static void matrixbasicsetting() {
             //upload
             row = 3;
             column = 3;
-            matix = new int[row,column];
+            matix = new string[row,column];
             for(int i = 0;i < row;i++) {
                 for(int j = 0;j < column;j++) {
-                    matix[i,j] = counter++;
+                    matix[i,j] = Convert.ToString(counter++);
                     }
                 }
             //output
@@ -30,9 +30,55 @@ namespace tictactoe {
                 }
             }
         public static void game() {
+            int row = 3;
+            int column = 3;
             Console.WriteLine("X is the starter");
-            do {
-
+            do {               
+                //X input
+                Console.WriteLine("Please give the X's place");
+                string x = Console.ReadLine();
+                //upload to the matrix
+                for(int i = 0;i < row ;i++) {
+                    for(int j = 0;j < column;j++) {
+                        if(matix[i,j] == x) {
+                            matix[i,j] = "X";
+                            break;
+                            }
+                        else
+                            continue;
+                        }
+                    }
+                //output the new matrix
+                for(int i = 0;i < row;i++) {
+                    for(int j = 0;j < column;j++) {
+                        Console.Write(Convert.ToString(string.Format("{0}\t",matix[i,j])));
+                        }
+                    Console.WriteLine();
+                    }
+                testwinner();
+                if(winner == true) {
+                    break;
+                    }
+                Console.WriteLine("Please give the O's place");
+                string o= Console.ReadLine();          
+                //upload to the matrix
+                for(int i = 0;i < row;i++) {
+                    for(int j = 0;j < column;j++) {
+                        if(matix[i,j] == o) {
+                            matix[i,j] = "O";
+                            break;
+                            } else
+                            continue;
+                        }
+                    }
+                //output the new matrix
+                for(int i = 0;i < row;i++) {
+                    for(int j = 0;j < column;j++) {
+                        Console.Write(Convert.ToString(string.Format("{0}\t",matix[i,j])));
+                        }
+                    Console.WriteLine();
+                    }
+                testwinner();
                 } while(winner == false);
             }
         static void testwinner() {
@@ -56,7 +102,7 @@ namespace tictactoe {
             for(int i = 0;i < column;i++) {
                 if(matix[row,i] == matix[row + 1,i]&& matix[row+2,i] == matix[row,i]&& matix[row+1,i]==matix[row+2,i] ) {
                     Console.Clear();
-                    Console.WriteLine($"{matix[row,column]} is the winner");
+                    Console.WriteLine($"{matix[row,i]} is the winner");
                     winner = true;
                     break;
                     }
